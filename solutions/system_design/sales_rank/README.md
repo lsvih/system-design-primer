@@ -1,4 +1,4 @@
-# 为 Amazon 设计分类售卖排序
+# 为 Amazon 设计分类售卖排行
 
 **注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
 
