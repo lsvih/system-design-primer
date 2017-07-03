@@ -51,7 +51,7 @@
     * `buyer_id` - 8 字节
     * `quantity` - 4 字节
     * `total_price` - 5 字节
-    * 总计: 大约 40 字节
+    * 总计：大约 40 字节
 * 每个月的交易内容会产生 40 GB 的记录
     * 每次交易 40 字节 * 每个月 10 亿次交易
     * 3年内产生了 1.44 TB 的新交易内容记录
@@ -234,7 +234,7 @@ $ curl https://amazon.com/api/v1/popular?category_id=1234
 },
 ```
 
-而对于服务器内部的通信，我们可以使用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
+而对于服务器内部的通信，我们可以使用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
 
 ## 第四步：架构扩展
 
@@ -268,7 +268,7 @@ $ curl https://amazon.com/api/v1/popular?category_id=1234
 
 当使用数据仓储技术或者**对象存储**系统时，我们只想在数据库中存储有限时间段的数据。Amazon S3 的**对象存储**系统可以很方便地设置每个月限制只允许新增 40 GB 的存储内容。
 
-平均每秒 40,000 次的读取请求, 可以通过扩展 **内存缓存** 来处理热点内容的读取流量，这对于处理不均匀分布的流量和流量峰值也很有用**SQL读取副本** 可能会遇到处理缓存未命中的问题, 我们可能需要使用额外的 SQL 扩展模式。
+平均每秒 40,000 次的读取请求（峰值将会更高）, 可以通过扩展 **内存缓存** 来处理热点内容的读取流量，这对于处理不均匀分布的流量和流量峰值也很有用。由于读取量非常大，**SQL Read 副本** 可能会遇到处理缓存未命中的问题，我们可能需要使用额外的 SQL 扩展模式。
 
 平均每秒 400 次写操作（峰值将会更高）可能对于单个 **SQL 写主-从** 模式来说比较很困难，因此同时还需要更多的扩展技术
 
