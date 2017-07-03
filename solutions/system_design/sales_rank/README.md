@@ -270,7 +270,7 @@ $ curl https://amazon.com/api/v1/popular?category_id=1234
 
 平均每秒 40,000 次的读取请求, 可以通过扩展 **内存缓存** 来处理热点内容的读取流量，这对于处理不均匀分布的流量和流量峰值也很有用**SQL读取副本** 可能会遇到处理缓存未命中的问题, 我们可能需要使用额外的 SQL 扩展模式。
 
-平均每秒 400 次写操作（明显更高）可能对于单个 **SQL 写主-从** 模式来说比较很困难，因此同时还需要更多的扩展技术
+平均每秒 400 次写操作（峰值将会更高）可能对于单个 **SQL 写主-从** 模式来说比较很困难，因此同时还需要更多的扩展技术
 
 SQL 缩放模式包括：
 
@@ -279,7 +279,7 @@ SQL 缩放模式包括：
 * [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
 * [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优)
 
-我们也可以考虑将一些数据移至 **NoSQL 数据库**.
+我们也可以考虑将一些数据移至 **NoSQL 数据库**。
 
 ## 其它要点
 
